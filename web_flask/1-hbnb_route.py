@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to start a Flask web application with 2 commands"""
+""" 1. Script to start a Flask web application with 2 commands """
 
 from flask import Flask
 
@@ -8,11 +8,14 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello():
+def hello_world():
+    """ Returns some text. """
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
-def hbnb():
+def hello():
+    """ Return other text. """
     return 'HBNB'
 
 if __name__ == '__main__':
