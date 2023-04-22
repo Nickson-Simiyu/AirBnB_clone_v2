@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ 5. Add fifth view func that displays HTML page if n is int """
 
-from flask import Flask, request
-from flask import render_template
+from flask import Flask, request, render_template
 
 
 app = Flask(__name__)
@@ -42,8 +41,7 @@ def number(n):
 
 
 @app.route('/number_template/<int:n>')
-def html_num(n):
-    """ display html if n is int. """
+def number_template(n):
     return render_template('5-number.html', n=n)
 
 
