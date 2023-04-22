@@ -22,7 +22,7 @@ def hbnb():
 
 @app.route('/c/<text>')
 def c_text(text):
-    """ Returns 'C ' followed by the value of text with underscores replaced by spaces """
+    """ replace text with variable. """
     text = text.replace('_', ' ')
     return 'C {}'.format(text)
 
@@ -30,7 +30,6 @@ def c_text(text):
 @app.route('/python/', defaults={'text': 'is cool'})
 @app.route('/python/<text>')
 def python_text(text):
-    """ Returns 'Python ' followed by the value of text with underscores replaced by spaces """
     text = text.replace('_', ' ') if text else 'is cool'
     return 'Python {}'.format(text)
 
@@ -43,13 +42,11 @@ def number(n):
 
 @app.route('/number_template/<int:n>')
 def number_template(n):
-    """ Returns an HTML page with 'Number: n' inside the body tag, only if n is an integer """
     return render_template('number.html', n=n)
 
 
 @app.route('/number_odd_or_even/<int:n>')
 def number_odd_or_even(n):
-    """ Returns an HTML page with 'Number: n is even|odd' inside the body tag, only if n is an integer """
     if n % 2 == 0:
         result = '{} is even'.format(n)
     else:
