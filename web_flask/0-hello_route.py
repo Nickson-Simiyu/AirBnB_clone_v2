@@ -3,8 +3,10 @@
 
 from flask import Flask
 
+
 # Create Flask app
 app = Flask(__name__)
+
 
 # Route for the home page
 @app.route('/', strict_slashes=False)
